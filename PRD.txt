@@ -1,0 +1,72 @@
+### Product Requirements Document (PRD) v2
+
+### **1. Problem**
+
+The Sales team often finds it hard to get the best rates to charge a client for Trucking services between locations (origin and destination). Currently, they ask the fleet manager, who pulls information from a csv sheet and shares with them in chat.This process is inefficient, time-consuming, and disrupts workflow, leading to delays in providing quotes to clients.
+
+---
+
+### **2. Solution**
+
+Develop a **Trip Rate tool**  that provides easy access to cost and sales information for the sales team. 
+
+The tool will allow users to review existing data based on **Origin** and **Destination** and can help calculate costs dynamically. Default values will be prefilled based on the most recently uploaded data but can be adjusted by users.
+
+A file containing the following headers will serve as the starting dataset:
+
+- **Origin**
+- **Destination**
+- **Road Expenses**
+- **Dispatch**
+- **Fuel Cost**
+- **Cost/Litre**
+- **Litres**
+- **Trip Rate**
+- **Commission**
+- **Charges**
+
+This data will be uploaded as knowledge, and to an external database that will have an API integration.
+
+---
+
+### User inputs for rates
+
+1. **Input Fields**
+    - **Origin** and **Destination** (searchable fields to retrieve existing data).
+    - **Editable Fields**:
+        - Road Expenses
+        - Dispatch Fees
+        - Fuel Price (Cost/Litre)
+        - Fuel Litres (defaulted to the last used value from the upload).
+        - Charges (Revenue).
+    - Commission Percentage (adjustable).
+2.  **Calculations**
+    - **Fuel Cost**: calculated as `Fuel Price (Cost/Litre) * Fuel Litres`.
+    - **Total Costs**: Sum of Road Expenses, Dispatch Fees, Fuel Cost, and Commission amount.
+    - **Profit**: calculated as `Charges - Total Costs`.
+3. **Database Integration**
+    - Users can upload files with predefined headers to serve as the dataset.
+    - Default starting values for fields like Litres will be pulled from the last uploaded data.
+    - Ability to update values, add new rates, or overwrite data via file upload.
+4. **User Interaction**
+    - Optimize for Searching functionality to find rates based on **Origin** and **Destination**.
+    - Provide dynamic cost recalculations based on user needs.
+    - Clearly display Total Costs, Charges, and Profit. Use tables and a summary.
+
+---
+
+### **4. We are optimizing for**
+
+- Improved efficiency in generating and sharing trip rates.
+- Positive feedback from the sales team on usability and effectiveness.
+- Centralized, accessible, and up-to-date rate database.
+- Accuracy in calculating costs and profit based on inputs.
+
+---
+
+### **5. Key Facts**
+
+- Uploaded files will follow the predefined headers for accurate integration.
+- Existing rates will serve as a reliable starting point for calculations
+
+---
